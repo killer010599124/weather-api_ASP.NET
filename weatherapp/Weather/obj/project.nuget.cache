@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "r8EezFdASUxyyF7morpKS5TxQS4IetRgr+uSE9GS+hMxgVSaMF6rOPj7MVEDV8j87rR1FBOfbvOVc5+0ac5tiw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Gaurav Sharma\\Downloads\\weatherapp\\weatherapp\\Weather\\Weather.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gaurav Sharma\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

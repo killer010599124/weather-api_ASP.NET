@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Weather.Models.Rootobject
+<div class="text-center">
+    <label class="mb-4 fs-3 fw-bold">Weather Search</label>
+    <form role="form" id="MyForm" method="post" action="@Url.Action("Index", "Home")" enctype="multipart/form-data">
+
+        <div class="modal-body" style="display: flex;justify-content: center;">
+            <input type="text" name="id" required="" placeholder="Enter Location"class="form-control" style="
+    width: 284px;
+">
+            <!-- Add a download link or button -->
+        </div>
+
+        <button type="submit" class=" mb-3" style="
+    width: 286px;
+    background-color: #4798e7;
+    border: 0px;
+    border-radius: 4px;
+    height: 34px;
+    color: white;
+">
+            Search
+        </button>
+    </form>
+</div>
+@if(Model!=null)
+{
+
+
+<div class="text-center overflow-scroll">
+    <table id="tblCategory" class="table listing-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>MaxTemp</th>
+                <th>Min Temp</th>
+                <th>Feel Like Max</th>
+                <th>Feel Like Min</th>
+                <th>Humidity</th>
+                <th>precipitation</th>
+                <th>Wind Gust</th>
+                <th>Wind Speed</th>
+                <th>Wind Direction</th>
+                <th>Pressure</th>
+                <th>Cloud Cover</th>
+                <th>Visibility</th>
+                <th>Solar Radiation</th>
+                <th>Solar Energy</th>
+                <th>UV Index</th>
+                <th>Severe Risk</th>
+                <th>Sunrise</th>
+                <th>Sunset</th>
+                <th>Moon Phase</th>
+                <th>Conditions</th>
+                <th>Discription</th>
+                <th>Icon</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.days.Count() > 0)
+            {
+                int i = 1;
+                @foreach (var item in Model.days)
+                {
+                    <tr>
+                        <td>@item.datetime</td>
+                        <td>@item.tempmax</td>
+                        <td>@item.tempmin</td>
+                        <td>@item.feelslikemax</td>
+                        <td>@item.feelslikemin</td>
+                        <td>@item.humidity</td>
+                        <td>@item.precip</td>
+                        <td>@item.windgust</td>
+                        <td>@item.windspeed</td>
+                        <td>@item.winddir</td>
+                        <td>@item.pressure</td>
+                        <td>@item.cloudcover</td>
+                        <td>@item.visibility</td>
+                        <td>@item.solarradiation</td>
+                        <td>@item.solarenergy</td>
+                        <td>@item.uvindex</td>
+                        <td>@item.severerisk</td>
+                        <td>@item.sunrise</td>
+                        <td>@item.sunset</td>
+                        <td>@item.moonphase</td>
+                        <td>@item.conditions</td>
+                        <td>@item.description</td>
+                        <td>@item.icon</td>
+                    </tr>
+
+                    i++;
+                }
+
+            }
+        </tbody>
+    </table>
+    </div>
+}
+else
+{
+    if (!string.IsNullOrEmpty(ViewBag.msg)){
+       <p>@ViewBag.msg</p> 
+    }
+    }
